@@ -92,10 +92,8 @@ public class CloverItem extends Item {
         for (ResourceLocation rl : keySet){
             for (String str : blackList){
                 if (rlBuilder(str).equals(rl)){
-                    Clover.LOGGER.debug(rlBuilder(str).equals(rl));
                     break;
                 }
-                Clover.LOGGER.debug(rl);
                 newSet.add(rl);
             }
         }
