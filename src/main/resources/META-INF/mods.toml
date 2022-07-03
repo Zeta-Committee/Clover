@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="GPL-3.0"
+[[mods]]
+modId="clover"
+version="${file.jarVersion}"
+displayName="Clover"
+logoFile="clover.png"
+credits="Thanks for this example mod goes to Java"
+authors="GossChinese of Zeta Committee"
+description='''
+Clover!
+'''
+
+[[dependencies.clover]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.clover]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
