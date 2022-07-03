@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[40,)"
 license="GPL-3.0"
 [[mods]]
 modId="clover"
@@ -15,13 +15,13 @@ Clover!
 [[dependencies.clover]]
     modId="forge"
     mandatory=true
-    versionRange="[36,)"
+    versionRange="[40,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.clover]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5,1.17)"
+    versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"

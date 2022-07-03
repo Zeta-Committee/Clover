@@ -2,15 +2,15 @@ package committee.zeta.clover.goss.event;
 
 import committee.zeta.clover.goss.common.config.Config;
 import committee.zeta.clover.goss.init.ItemInit;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -22,10 +22,10 @@ import net.minecraftforge.fml.common.Mod;
 public class MineGrassEvent {
     @SubscribeEvent
     public static void onMine(BlockEvent.BreakEvent event){
-        PlayerEntity player= event.getPlayer();
+        Player player= event.getPlayer();
         BlockPos position = event.getPos();
         BlockState grass = event.getState();
-        World level = player.getCommandSenderWorld();
+        Level level = player.getCommandSenderWorld();
         if ((!grass.is(Blocks.GRASS)) || (Math.random() >= Config.PROBABILITY_CLOVER.get()) || (player.isCreative())){ return; }
         ItemEntity clover = new ItemEntity(EntityType.ITEM, level);
         clover.setItem(new ItemStack(ItemInit.CLOVER.get()));
