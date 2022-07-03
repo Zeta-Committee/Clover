@@ -1,3 +1,5 @@
 {
-	"item.clover.clover": "Clover"
+	"item.clover.clover": "Clover",
+	"tip.clover.whiteListOff": "White List: OFF",
+	"tip.clover.whiteListOn": "White List: ON"
 }

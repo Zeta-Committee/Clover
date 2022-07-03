@@ -1,3 +1,5 @@
 {
-	"item.clover.clover": "四叶草"
+	"item.clover.clover": "四叶草",
+	"tip.clover.whiteListOff": "白名单： 关",
+	"tip.clover.whiteListOn": "白名单： 开"
 }

@@ -1,5 +1,6 @@
 package committee.zeta.clover.goss.event;
 
+import committee.zeta.clover.goss.common.config.Config;
 import committee.zeta.clover.goss.init.ItemInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -25,10 +26,10 @@ public class MineGrassEvent {
         BlockPos position = event.getPos();
         BlockState grass = event.getState();
         World level = player.getCommandSenderWorld();
-        if ((!grass.is(Blocks.GRASS)) && (Math.random()*100 >= 5) && (player.isCreative())){ return; }
+        if ((!grass.is(Blocks.GRASS)) || (Math.random() >= Config.PROBABILITY_CLOVER.get()) || (player.isCreative())){ return; }
         ItemEntity clover = new ItemEntity(EntityType.ITEM, level);
         clover.setItem(new ItemStack(ItemInit.CLOVER.get()));
-        clover.setPos(position.getX(), position.getY(), position.getZ());
+        clover.setPos(position.getX(), position.getY() + 0.5D, position.getZ());
         MinecraftServer mcs = level.getServer();
         mcs.overworld().addFreshEntity(clover);
     }
